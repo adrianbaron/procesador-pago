@@ -1,4 +1,4 @@
-package com.example.procesador_pago.model;
+package com.example.procesador_pago.service;
 
 public class paymentRequest {
     private String paymentType;

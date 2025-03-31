@@ -1,9 +1,9 @@
-package com.example.procesador_pago.factory;
+package com.example.procesador_pago.domain.factory;
 
-import com.example.procesador_pago.service.IPaymentProcessor;
-import com.example.procesador_pago.service.impl.CreditCardProcessor;
-import com.example.procesador_pago.service.impl.DebitCardProcessor;
-import com.example.procesador_pago.service.impl.PaypalProcessor;
+import com.example.procesador_pago.domain.IPaymentProcessor;
+import com.example.procesador_pago.domain.impl.CreditCardProcessor;
+import com.example.procesador_pago.domain.impl.DebitCardProcessor;
+import com.example.procesador_pago.domain.impl.PaypalProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,9 +1,9 @@
 package com.example.procesador_pago.controller;
 
-import com.example.procesador_pago.factory.PaymentProcessorFactory;
-import com.example.procesador_pago.model.paymentRequest;
-import com.example.procesador_pago.model.paymentResponse;
-import com.example.procesador_pago.service.IPaymentProcessor;
+import com.example.procesador_pago.domain.factory.PaymentProcessorFactory;
+import com.example.procesador_pago.service.paymentRequest;
+import com.example.procesador_pago.service.paymentResponse;
+import com.example.procesador_pago.domain.IPaymentProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
