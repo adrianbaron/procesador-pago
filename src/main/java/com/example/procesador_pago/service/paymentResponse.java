@@ -4,6 +4,8 @@ public class paymentResponse {
     private double originalAmount;
     private double finalAmount;
     private String paymentType;
+    private boolean notificationSent;
+    private String notificationMessage;
 
     public paymentResponse() {
     }
@@ -12,6 +14,8 @@ public class paymentResponse {
         this.originalAmount = originalAmount;
         this.finalAmount = finalAmount;
         this.paymentType = paymentType;
+        this.notificationSent = false;
+        this.notificationMessage = null;
     }
 
     public double getOriginalAmount() {
@@ -36,5 +40,21 @@ public class paymentResponse {
 
     public void setPaymentType(String paymentType) {
         this.paymentType = paymentType;
+    }
+
+    public boolean isNotificationSent() {
+        return notificationSent;
+    }
+
+    public void setNotificationSent(boolean notificationSent) {
+        this.notificationSent = notificationSent;
+    }
+
+    public String getNotificationMessage() {
+        return notificationMessage;
+    }
+
+    public void setNotificationMessage(String notificationMessage) {
+        this.notificationMessage = notificationMessage;
     }
 }

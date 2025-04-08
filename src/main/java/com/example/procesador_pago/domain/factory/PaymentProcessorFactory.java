@@ -1,9 +1,10 @@
 package com.example.procesador_pago.domain.factory;
 
 import com.example.procesador_pago.domain.IPaymentProcessor;
-import com.example.procesador_pago.domain.impl.CreditCardProcessor;
-import com.example.procesador_pago.domain.impl.DebitCardProcessor;
-import com.example.procesador_pago.domain.impl.PaypalProcessor;
+import com.example.procesador_pago.domain.impl.PaymentProcessor.CreditCardProcessor;
+import com.example.procesador_pago.domain.impl.PaymentProcessor.CryptoProcessor;
+import com.example.procesador_pago.domain.impl.PaymentProcessor.DebitCardProcessor;
+import com.example.procesador_pago.domain.impl.PaymentProcessor.PaypalProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,10 +18,12 @@ public class PaymentProcessorFactory {
     @Autowired
     public PaymentProcessorFactory(CreditCardProcessor creditCardProcessor,
                                    DebitCardProcessor debitCardProcessor,
-                                   PaypalProcessor payPalProcessor) {
+                                   PaypalProcessor payPalProcessor,
+                                   CryptoProcessor cryptoProcessor) {
         processors.put("CREDIT_CARD", creditCardProcessor);
         processors.put("DEBIT_CARD", debitCardProcessor);
         processors.put("PAYPAL", payPalProcessor);
+        processors.put("CRYPTO", cryptoProcessor);
     }
 
     public IPaymentProcessor getProcessor(String paymentType) {
