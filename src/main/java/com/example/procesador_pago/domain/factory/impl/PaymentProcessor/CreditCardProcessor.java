@@ -1,6 +1,6 @@
-package com.example.procesador_pago.domain.impl.PaymentProcessor;
+package com.example.procesador_pago.domain.factory.impl.PaymentProcessor;
 
-import com.example.procesador_pago.domain.IPaymentProcessor;
+import com.example.procesador_pago.domain.factory.IPaymentProcessor;
 import org.springframework.stereotype.Component;
 
 @Component

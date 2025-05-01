@@ -16,7 +16,8 @@ public class CorsConfig {
 
         // Permitir solicitudes desde cualquier origen durante el desarrollo
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:3000"); // Puerto predeterminado en Flutter web
+        config.addAllowedOrigin("http://localhost:3000");
+        config.addAllowedOrigin("http://localhost:8080");// Puerto predeterminado en Flutter web
         config.addAllowedOrigin("http://localhost:8000"); // Otro puerto común
         config.addAllowedOrigin("http://localhost:9000"); // Por si usas otro puerto
         config.addAllowedOrigin("http://localhost:5000"); // Por si usas otro puerto

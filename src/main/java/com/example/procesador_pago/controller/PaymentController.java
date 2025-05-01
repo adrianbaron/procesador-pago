@@ -1,11 +1,11 @@
 package com.example.procesador_pago.controller;
 
-import com.example.procesador_pago.domain.INotification;
+import com.example.procesador_pago.domain.factory.INotification;
 import com.example.procesador_pago.domain.factory.NotificationFactory;
 import com.example.procesador_pago.domain.factory.PaymentProcessorFactory;
 import com.example.procesador_pago.service.paymentRequest;
 import com.example.procesador_pago.service.paymentResponse;
-import com.example.procesador_pago.domain.IPaymentProcessor;
+import com.example.procesador_pago.domain.factory.IPaymentProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,12 +43,12 @@ public class PaymentController {
             // Enviar notificación si se especifica en la solicitud
             if (request.getNotificationType() != null && !request.getNotificationType().isEmpty()) {
                 try {
-                    INotification notification = notificationFactory.getNotification(request.getNotificationType());
+                    INotification notification = notificationFactory.getBuilder(request.getNotificationType()).build();
                     String subject = "Confirmación de pago";
                     String message = String.format("Su pago de %.2f mediante %s ha sido procesado. Monto final: %.2f",
                             request.getAmount(), request.getPaymentType(), finalAmount);
 
-                    notification.send(request.getNotificationRecipient(), subject, message);
+                    notification.send();
                     response.setNotificationSent(true);
                 } catch (Exception e) {
                     // Capturamos la excepción pero no fallamos el proceso de pago
